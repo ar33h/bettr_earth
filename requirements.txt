@@ -1,0 +1,2 @@
+streamlit-qrcode-scanner
+streamlit_authenticator

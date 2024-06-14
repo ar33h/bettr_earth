@@ -1,0 +1,18 @@
+credentials:
+  usernames:
+    AS51948N:
+      email: arshdeep@bettrearth.com
+      name: Arshdeep
+      password: arshdeep1
+    JD08825N:
+      email: jasmeet@bettrearth.com
+      name: Jasmeet
+      password: jasmeet2
+cookie:
+  expiry_days: 10
+  key: bettr_earth_store_app
+  name: BE Store
+  
+preauthorized:
+  emails:
+  - test@bettrearth.com
