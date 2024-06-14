@@ -27,16 +27,31 @@ status = authenticator.login(
 # st.text(status)
 
 def customerCheckin():
-    
-    msg = st.warning('Scan Member Card to Start!')
+    beCustomers = {185263954497: "Harry", 185263954498: "Ron", 185263954499: "Hermione"}
+
+    msg = st.warning('Scan Member Code to Start!')
     nextBtn = st.markdown('')
-    bar_code = qrcode_scanner()
+    # bar_code = qrcode_scanner()
     # qr_code = 1 
     # st.write(qr_code)
-    # bar_code = 1
-    if bar_code:
-        msg.success("Hello John")
-        nextBtn.markdown('<a href="items" target="_self">Start Billing</a>', unsafe_allow_html=True)
+    bar_code = 185263954497
+    # customerName = ""
+    
+    if bar_code == 185263954497:
+        customerName = beCustomers[185263954497]
+        
+    elif bar_code == 185263954498:
+        customerName = beCustomers[185263954498]
+
+    elif bar_code == 185263954499:
+        customerName = beCustomers[185263954499]
+    
+    else:
+        msg.error("Invalid Code. Member does not exist")
+        return
+
+    msg.success(f'Hello {customerName}')
+    nextBtn.markdown('<a href="items" target="_self">Start Billing</a>', unsafe_allow_html=True)
         # if st.button(label="Start"):
     
 # def itemCheckout():
