@@ -1,7 +1,16 @@
+# Visa Hackathon 2024
+# Challenge 1: Groceries for Good
+# Team Pace University - Arshdeep, Jasmeet
+
+# Web App for Stores - Checkout Systems
+
+# Modules
 import streamlit as st
 import pandas as pd
 import streamlit_authenticator as stauth
 import yaml
+import cv2
+import numpy as np
 from yaml.loader import SafeLoader
 from streamlit_qrcode_scanner import qrcode_scanner
 
@@ -31,27 +40,29 @@ def customerCheckin():
 
     msg = st.warning('Scan Member Code to Start!')
     nextBtn = st.markdown('')
-    # bar_code = qrcode_scanner()
+    # barcodeScanner()
+    bar_code = qrcode_scanner()
     # qr_code = 1 
-    # st.write(qr_code)
+    # st.write(bar_code)
     bar_code = 185263954497
     # customerName = ""
-    
-    if bar_code == 185263954497:
-        customerName = beCustomers[185263954497]
-        
-    elif bar_code == 185263954498:
-        customerName = beCustomers[185263954498]
+    if bar_code:
+        st.write(bar_code)
+        if bar_code == 185263954497:
+            customerName = beCustomers[185263954497]
+            
+        elif bar_code == 185263954498:
+            customerName = beCustomers[185263954498]
 
-    elif bar_code == 185263954499:
-        customerName = beCustomers[185263954499]
+        elif bar_code == 185263954499:
+            customerName = beCustomers[185263954499]
     
-    else:
-        msg.error("Invalid Code. Member does not exist")
-        return
+    # else:
+    #     msg.error("Invalid Code. Member does not exist")
+    #     return
 
-    msg.success(f'Hello {customerName}')
-    nextBtn.markdown('<a href="items" target="_self">Start Billing</a>', unsafe_allow_html=True)
+        msg.success(f'Hello {customerName}')
+        nextBtn.markdown('<a href="items" target="_self">Start Billing</a>', unsafe_allow_html=True)
         # if st.button(label="Start"):
     
 # def itemCheckout():
