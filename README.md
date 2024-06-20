@@ -3,5 +3,7 @@
 Features:
 - Streamlit Authenticator
 - Barcode Scanner
-- [In Progress] Product Checkout
-- [In Progress] Reward Program
+- Product Checkout
+- Reward / Recommendation
+
+python -m streamlit run filename.py
